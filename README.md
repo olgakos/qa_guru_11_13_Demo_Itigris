@@ -69,7 +69,7 @@ test
 
 ## :watermelon: Запуск тестов в Jenkins
 Шаги:
-1. Зарегистрированным пользователем перейти на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_11_13_Demo/">Jenkins Itigris</a>
+1. Зарегистрированным пользователем перейти на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_11_13_Demo_Itigris/">Jenkins Itigris</a>
 2. Перечисленные ниже параметры можно менять в графическом интерфейсе.
 3. Запустить выполнение тестов кнопкой "Собрать" (внизу страницы)
 
