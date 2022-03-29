@@ -117,7 +117,7 @@ public class itigrisBasicTests extends TestBase {
         $("#frames-page").shouldHave(text("Каталог оправ"));
         alertWindowMethod();
         $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
-        sleep(2000);
+        sleep(4000);
         //$$("#container").find(text(expectedText)).shouldBe(visible);
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
