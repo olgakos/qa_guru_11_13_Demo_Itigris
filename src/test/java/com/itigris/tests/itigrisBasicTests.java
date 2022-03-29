@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Проверка элементов публичной части сайта")
 public class itigrisBasicTests extends TestBase {
@@ -76,7 +77,9 @@ public class itigrisBasicTests extends TestBase {
         $("input[placeholder='Поиск по названию']").setValue("Fixiki 7111").pressEnter();
         alertWindowMethod();
         sleep(5000);
-        $$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
+        //$$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
+        assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
+        //$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
     }
 
     @Tag("marketTests")
@@ -92,7 +95,8 @@ public class itigrisBasicTests extends TestBase {
         alertWindowMethod();
         $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
         $(".filters-tags").shouldHave(text("Поиск по названию: " + testData));
-        $$("#container").find(text(expectedText)).shouldBe(visible);
+        //$$("#container").find(text(expectedText)).shouldBe(visible);
+        assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
 
     //todo

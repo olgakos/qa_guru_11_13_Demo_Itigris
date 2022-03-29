@@ -106,18 +106,18 @@ test
 
 ###### Главный экран отчета (Owerwiev)
 <p align="center">
-<img title="Allure Graphics" src="images/screens/ScreenshotAllure1.jpg">
+<img title="Allure Graphics" src="images/screens/ScreenshotAllure1.jpg" width="400">
 </p>
 
 ###### Страница с проведенными тестами (Suites)
 <p align="center">
-<img title="Allure Graphics" src="images/screens/ScreenshotAllure2.jpg">
+<img title="Allure Graphics" src="images/screens/ScreenshotAllure2.jpg" width="400">
 </p>
 
 ## :watermelon: Видео прохождения тестов
 К каждому тесту (в отчете) прилагается автоматически сгенерирвонное Selenoid видео. Пример:
 <p align="center">
-  <img title="Selenoid Video" src="images/screens/VideoExample.gif" alt="video">
+  <img title="Selenoid Video" src="images/screens/VideoExample.gif" alt="video" width="400">
 </p>
 
 ## :bellhop_bell: Отчет в Telegram
