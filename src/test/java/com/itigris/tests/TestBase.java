@@ -46,18 +46,17 @@ public class TestBase {
         Attach.browserConsoleLogs();
     }
 
+    /*
     @AfterEach
     @DisplayName("Завершение работы браузера")
     void closeBrowser() {
         closeWebDriver();
     }
+     */
 
-    /*
     @AfterAll
     @DisplayName("Завершение работы браузера")
     public static void afterAll() {
         closeWebDriver();
     }
-
-     */
 }
