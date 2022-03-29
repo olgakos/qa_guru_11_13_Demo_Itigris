@@ -77,8 +77,6 @@ public class itigrisBasicTests extends TestBase {
         $("input[placeholder='Поиск по названию']").setValue("Fixiki F7111").pressEnter();
         alertWindowMethod();
         sleep(2000);
-        //$$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
-        //$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
         assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
     }
 
@@ -95,7 +93,6 @@ public class itigrisBasicTests extends TestBase {
         alertWindowMethod();
         $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
         $(".filters-tags").shouldHave(text("Поиск по названию: " + testData));
-        //$$("#container").find(text(expectedText)).shouldBe(visible);
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
 
@@ -118,7 +115,6 @@ public class itigrisBasicTests extends TestBase {
         alertWindowMethod();
         $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
         sleep(4000);
-        //$$("#container").find(text(expectedText)).shouldBe(visible);
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
     @Disabled
