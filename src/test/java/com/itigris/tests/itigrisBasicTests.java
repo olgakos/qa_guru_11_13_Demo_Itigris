@@ -74,12 +74,12 @@ public class itigrisBasicTests extends TestBase {
     void searchGlassesFramesTestDone() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
-        $("input[placeholder='Поиск по названию']").setValue("Fixiki 7111").pressEnter();
+        $("input[placeholder='Поиск по названию']").setValue("Fixiki F7111").pressEnter();
         alertWindowMethod();
-        sleep(5000);
+        sleep(2000);
         //$$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
-        assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
         //$(".items-wrap").find(text("Fixiki F7111")).shouldBe(visible);
+        assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
     }
 
     @Tag("marketTests")
@@ -115,10 +115,11 @@ public class itigrisBasicTests extends TestBase {
     void searchGlassesFramesTest(String testData, String expectedText) {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
-        $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
         alertWindowMethod();
+        $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
         sleep(2000);
-        $$("#container").find(text(expectedText)).shouldBe(visible);
+        //$$("#container").find(text(expectedText)).shouldBe(visible);
+        assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
     @Disabled
     @DisplayName("Пример пропущенного теста")
