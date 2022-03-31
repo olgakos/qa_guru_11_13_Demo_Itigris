@@ -31,8 +31,7 @@ public class itigrisBasicTests extends TestBase {
         $(byText("Meet Our Team")).shouldBe(visible);
         $(".my-6").shouldHave(text("Michael Khurgin"));
         $(By.linkText("info@itigris.com")).isDisplayed();
-        sleep(3000);
-        $$("#the-footer").find(text("© 2022 ITigris Ltd.")).shouldBe(visible); //negative test
+        //$$("#the-footer").find(text("© 2022 ITigris Ltd.")).shouldBe(visible); //negative test
         $$("#the-footer").find(text("© 2020 ITigris Ltd.")).shouldBe(visible);
     }
 
@@ -58,7 +57,6 @@ public class itigrisBasicTests extends TestBase {
         $("input[placeholder='Enter your industry']").setValue("QA engineer");
         $$("span.el-checkbox__inner").last().click(); // Accept Privacy Policy
         //$x("//span[text()='SEND MESSAGE']").click();
-        sleep(3000);
     }
 
     @Tag("marketTests")
@@ -117,7 +115,7 @@ public class itigrisBasicTests extends TestBase {
         $("#frames-page").shouldHave(text("Каталог оправ"));
         alertWindowMethod();
         $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
-        sleep(4000);
+        sleep(2000);
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
     @Disabled
