@@ -9,6 +9,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -30,7 +32,7 @@ public class itigrisBasicTests extends TestBase {
         $(".my-6").shouldHave(text("Michael Khurgin"));
         $(By.linkText("info@itigris.com")).isDisplayed();
         sleep(3000);
-        //$$("#the-footer").find(text("© 2022 ITigris Ltd.")).shouldBe(visible); //negative test
+        $$("#the-footer").find(text("© 2022 ITigris Ltd.")).shouldBe(visible); //negative test
         $$("#the-footer").find(text("© 2020 ITigris Ltd.")).shouldBe(visible);
     }
 
@@ -74,10 +76,11 @@ public class itigrisBasicTests extends TestBase {
     void searchGlassesFramesTestDone() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
-        $("input[placeholder='Поиск по названию']").setValue("Fixiki F7111").pressEnter();
         alertWindowMethod();
-        sleep(2000);
-        assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
+        $("input[placeholder='Поиск по названию']").setValue("Fixiki F7111").pressEnter();
+        //assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
+        //assertTrue($(".el-card__body").shouldHave(text("Fixiki F7111")).isDisplayed());
+       $(".el-card__body").$(byText("Fixiki F7111")).should(appear, Duration.ofSeconds(10));
     }
 
     @Tag("marketTests")
