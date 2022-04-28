@@ -112,7 +112,7 @@ test
 </p>
 
 ## :watermelon: Видео прохождения тестов
-К каждому тесту (в отчете) прилагается автоматически сгенерирвонное Selenoid видео. Пример:
+К каждому тесту (в отчете) прилагается автоматически сгенерированное Selenoid видео. Пример:
 <p align="center">
   <img title="Selenoid Video" src="images/screens/VideoExample.gif" alt="video">
 </p>
@@ -126,4 +126,4 @@ test
 </p>
 
 -------
-ver 2022-03-29
+ver1 2022-03-29
