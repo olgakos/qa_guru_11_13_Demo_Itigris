@@ -46,9 +46,9 @@ public class itigrisBasicTests extends TestBase {
         $$("body").find(text("Essilor")).shouldBe(visible);
     }
 
-    @Tag("siteTests")
-    @DisplayName("Заполнение формы обратной связи")
     @Test
+    @DisplayName("Заполнение формы обратной связи")
+    @Tag("siteTests")
     void fillFormTest() {
         open("/contact-us");
         $("input[placeholder='Enter your full name']").setValue("Olga Kos");
@@ -59,18 +59,19 @@ public class itigrisBasicTests extends TestBase {
         //$x("//span[text()='SEND MESSAGE']").click();
     }
 
-    @Tag("marketTests")
-    @DisplayName("Закрытие всплывающего окна")
     @Test
+    @DisplayName("Закрытие всплывающего окна")
+    @Tag("marketTests")
     void closeAlert() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
         alertWindowMethod();
     }
 
-    @Tag("marketTests")
-    @DisplayName("Поиск 1 товара")
+
     @Test
+    @DisplayName("Поиск 1 товара")
+    @Tag("marketTests")
     void searchGlassesFramesTestDone() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
@@ -97,16 +98,11 @@ public class itigrisBasicTests extends TestBase {
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
 
-    //todo
-    // Фактический результат:
-    // На странице "Каталог оправ"
-    // не работает поиск по брендам Enni Marco и Enni Marco Emilia
-    // если наименование товара содержит > 1 слова
     @Tag("marketTests")
-    @DisplayName("Поиск по части наименования.")
+    @DisplayName("Пример нахождения бага: поиск по части наименования.")
     @ParameterizedTest(name = "Проверка результатов для запроса: \"{0}\"")
     @CsvSource(value = {
-            "Enni|Enni Marco 06-061", //done
+            //"Enni|Enni Marco 06-061", //done
             "Enni Marco|Enni Marco 06-061", //fail
             "Enni Marco 06-061|Enni Marco 06-061" //fail
     }, delimiter = '|')
@@ -118,9 +114,15 @@ public class itigrisBasicTests extends TestBase {
         sleep(2000);
         assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
-    @Disabled
-    @DisplayName("Пример пропущенного теста")
+    //todo, что случилось:
+    // Фактический результат:
+    // На странице "Каталог оправ"
+    // не работает поиск по брендам Enni Marco и Enni Marco Emilia
+    // если наименование товара содержит > 1 слова
+
     @Test
+    @Disabled ("Этот тест не будет запущен")
+    @DisplayName("Пример пропущенного теста")
     public void skippedTest() {
         System.out.println("Тест пропущен");
     }

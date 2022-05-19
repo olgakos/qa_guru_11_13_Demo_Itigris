@@ -22,7 +22,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = size;
         Configuration.browser = browser;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //NB удаленный запуск
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -33,6 +33,7 @@ public class TestBase {
         Attach.attachAsText("Size: ", size);
 
         clearBrowserCookies();
+
         Configuration.baseUrl = "https://itigris.com";
         open("");
     }
@@ -46,15 +47,13 @@ public class TestBase {
         Attach.browserConsoleLogs();
     }
 
-    /*
     @AfterEach
-    void closeBrowser() {
-        closeWebDriver();
-    }
-     */
+    @DisplayName("Закрыть браузер после записи видео")
+    void closeBrowser() { closeWebDriver();}
 
+    /*
     @AfterAll
-    public static void afterAll() {
-        closeWebDriver();
-    }
+    public static void afterAll() { closeWebDriver();  }
+   */
+
 }
