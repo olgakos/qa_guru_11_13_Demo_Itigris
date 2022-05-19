@@ -1,6 +1,7 @@
-package com.itigris.tests;
+package com.itigris.legacyCode;
 
 import com.codeborne.selenide.Selenide;
+import com.itigris.tests.TestBase;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -17,14 +18,14 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Проверка элементов публичной части сайта")
-public class itigrisBasicTests extends TestBase {
+public class ItigrisBasicListTests extends TestBase {
 
     //todo
     // Фактический результат: В футере itigris.com стоит 2020 год.
     // Ожидаемый результат: 2022
+    @Test
     @Tag("siteTests")
     @DisplayName("Проверка текстов на странице Team")
-    @Test
     void searshTextElement() {
         open("/team");
         $("#header-nav").shouldHave(text("ITIGRIS"));
@@ -35,9 +36,9 @@ public class itigrisBasicTests extends TestBase {
         $$("#the-footer").find(text("© 2020 ITigris Ltd.")).shouldBe(visible);
     }
 
+    @Test
     @Tag("siteTests")
     @DisplayName("Проверка названия в карточке кейса Essilor")
-    @Test
     void searchCasesTest() {
         open("/cases");
         $(byText("Our Success Stories")).isDisplayed();
@@ -47,8 +48,8 @@ public class itigrisBasicTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Заполнение формы обратной связи")
     @Tag("siteTests")
+    @DisplayName("Заполнение формы обратной связи")
     void fillFormTest() {
         open("/contact-us");
         $("input[placeholder='Enter your full name']").setValue("Olga Kos");
@@ -56,22 +57,21 @@ public class itigrisBasicTests extends TestBase {
         $("input[placeholder='Enter your phone number']").setValue("+7921781хххх");
         $("input[placeholder='Enter your industry']").setValue("QA engineer");
         $$("span.el-checkbox__inner").last().click(); // Accept Privacy Policy
-        //$x("//span[text()='SEND MESSAGE']").click();
+        //$x("//span[text()='SEND MESSAGE']").click(); //намеренно пропускаю шаг "отправить"
     }
 
     @Test
-    @DisplayName("Закрытие всплывающего окна")
     @Tag("marketTests")
+    @DisplayName("Закрытие всплывающего окна")
     void closeAlert() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
         alertWindowMethod();
     }
 
-
     @Test
-    @DisplayName("Поиск 1 товара")
     @Tag("marketTests")
+    @DisplayName("Поиск 1 товара")
     void searchGlassesFramesTestDone() {
         Selenide.open("https://market.itigris.ru/catalog/glasses-frames");
         $("#frames-page").shouldHave(text("Каталог оправ"));
@@ -80,22 +80,6 @@ public class itigrisBasicTests extends TestBase {
         //assertTrue($(".items-wrap").shouldHave(text("Fixiki F7111")).isDisplayed());
         //assertTrue($(".el-card__body").shouldHave(text("Fixiki F7111")).isDisplayed());
        $(".el-card__body").$(byText("Fixiki F7111")).should(appear, Duration.ofSeconds(10));
-    }
-
-    @Tag("marketTests")
-    @DisplayName("Поиск нескольких товаров.")
-    @ParameterizedTest(name = "Проверка результатов для запроса: \"{0}\"")
-    @CsvSource(value = {
-            "EYNOA| Hoya Nulux EYNOA",
-            "Kids| Hoya Hilux Kids"
-    }, delimiter = '|')
-    void searchLeansesTest(String testData, String expectedText) {
-        Selenide.open("https://market.itigris.ru/catalog/lenses");
-        $("body").shouldHave(text("Каталог очковых линз"));
-        alertWindowMethod();
-        $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
-        $(".filters-tags").shouldHave(text("Поиск по названию: " + testData));
-        assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
     }
 
     @Tag("marketTests")
@@ -119,6 +103,23 @@ public class itigrisBasicTests extends TestBase {
     // На странице "Каталог оправ"
     // не работает поиск по брендам Enni Marco и Enni Marco Emilia
     // если наименование товара содержит > 1 слова
+
+
+    @Tag("marketTests")
+    @DisplayName("Поиск нескольких товаров.")
+    @ParameterizedTest(name = "Проверка результатов для запроса: \"{0}\"")
+    @CsvSource(value = {
+            "EYNOA| Hoya Nulux EYNOA",
+            "Kids| Hoya Hilux Kids"
+    }, delimiter = '|')
+    void searchLeansesTest(String testData, String expectedText) {
+        Selenide.open("https://market.itigris.ru/catalog/lenses");
+        $("body").shouldHave(text("Каталог очковых линз"));
+        alertWindowMethod();
+        $("input[placeholder='Поиск по названию']").setValue(testData).pressEnter();
+        $(".filters-tags").shouldHave(text("Поиск по названию: " + testData));
+        assertTrue($("#container").shouldHave(text(expectedText)).isDisplayed());
+    }
 
     @Test
     @Disabled ("Этот тест не будет запущен")
