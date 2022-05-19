@@ -61,7 +61,6 @@ test
 -DbrowserSize=${BROWSER_SIZE}
 -DremoteDriverUrl=https://user1:1234@${REMOTE_BROWSER}/wd/hub/
 -DvideoStorage=https://${REMOTE_BROWSER}/video/
--Dthreads=${THREADS}
 ```
 
 ## :watermelon: Запуск тестов в Jenkins
