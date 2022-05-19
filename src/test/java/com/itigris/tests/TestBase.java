@@ -24,7 +24,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = size;
         Configuration.browser = browser;
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //NB удаленный запуск
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //NB удаленный запуск
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -58,11 +58,9 @@ public class TestBase {
     public static void afterAll() { closeWebDriver();  }
    */
 
-
     void alertWindowMethod() {
         if ($x("//h3[contains(.,'ПОЛИТИКА БЕЗОПАСНОСТИ')]").is(exist)) {
             $(".el-button--danger").shouldHave(text("Принять")).click();
         }
     }
-
 }
