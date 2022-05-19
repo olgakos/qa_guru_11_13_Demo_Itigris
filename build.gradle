@@ -64,14 +64,32 @@ tasks.withType(Test) {
 
 //@Tag тесты для раздела Маркет
 task market_tests(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags "marketTests"
     }
 }
 
-//тесты для раздела Сайт Компании
+//@Tagтесты для раздела Сайт Компании
 task site_tests(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags "siteTests"
     }
+
+
+    /*
+    //@Tag для пропуска тестов
+    //для запуска тестов придется использовать команду "gradle clean regress" ну или другое название таски
+    task regress(type: Test) {
+        useJUnitPlatform {
+            includeTags "regress"
+            excludeTags "smoke"}
+    }
+
+
+    //@Tag для пропуска тестов (demo)
+    task notRun (type: Test) {
+        useJUnitPlatform {
+            excludeTags "notrun"}
+    }
+     */
 }

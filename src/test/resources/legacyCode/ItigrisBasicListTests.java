@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Проверка элементов публичной части сайта")
 public class ItigrisBasicListTests extends TestBase {
 
-    //todo
+     //todo
     // Фактический результат: В футере itigris.com стоит 2020 год.
     // Ожидаемый результат: 2022
     @Test
@@ -128,6 +128,7 @@ public class ItigrisBasicListTests extends TestBase {
         System.out.println("Тест пропущен");
     }
 
+    //вспомогательный метод для закрытия Алерта
     void alertWindowMethod() {
         if ($x("//h3[contains(.,'ПОЛИТИКА БЕЗОПАСНОСТИ')]").is(exist)) {
             $(".el-button--danger").shouldHave(text("Принять")).click();
