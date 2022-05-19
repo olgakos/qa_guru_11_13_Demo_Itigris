@@ -104,7 +104,6 @@ public class ItigrisBasicListTests extends TestBase {
     // не работает поиск по брендам Enni Marco и Enni Marco Emilia
     // если наименование товара содержит > 1 слова
 
-
     @Tag("marketTests")
     @DisplayName("Поиск нескольких товаров.")
     @ParameterizedTest(name = "Проверка результатов для запроса: \"{0}\"")
