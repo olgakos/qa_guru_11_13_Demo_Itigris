@@ -123,7 +123,6 @@ test
 <p align="center">
 <img title="Telegram Bot" src="images/screens/ScreenshotTelegram.jpg" alt="Telegram Bot">
 </p>
-
 -------
 ver1 2022-03-29
 ver2 2022-05-19 (add PageObject)
