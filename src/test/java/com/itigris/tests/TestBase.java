@@ -41,22 +41,14 @@ public class TestBase {
     }
 
     @AfterEach
-    @DisplayName("Формирование артефактов тестирования")
+    @DisplayName("Формирование артефактов тестирования. Останвока браузера")
     void addAttachment() {
         Attach.screenshotAs("Last screenshot");
         Attach.addVideo();
         Attach.pageSource();
         Attach.browserConsoleLogs();
+        closeWebDriver(); // Закрыть браузер после записи видео
     }
-
-    @AfterEach
-    @DisplayName("Закрыть браузер после записи видео")
-    void closeBrowser() { closeWebDriver();}
-
-    /*
-    @AfterAll
-    public static void afterAll() { closeWebDriver();  }
-   */
 
     void alertWindowMethod() {
         if ($x("//h3[contains(.,'ПОЛИТИКА БЕЗОПАСНОСТИ')]").is(exist)) {

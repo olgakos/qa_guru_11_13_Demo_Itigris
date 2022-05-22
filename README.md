@@ -10,9 +10,7 @@
 - [Видео прохождения тестов](#watermelon-Видео-прохождения-тестов)
 - [Отчет в Telegram](#bellhop_bell-Отчет-в-Telegram)
 
-
-## :watermelon: Технологии и инструменты
-
+## :watermelon: Технoлoгии и инструмeнты
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="images/logo/Idea.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -23,12 +21,12 @@
 <a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
-<a href="https://www.хххх/"><img width="50" height="50"  alt="Telegram" src="images/logo/Telegram.svg"></a>
+<a href="https://web.telegram.org/"><img width="50" height="50"  alt="Telegram" src="images/logo/Telegram.svg"></a>
 </p>
 
-Перечень технологий и инструментом, использованных при реализации этого проекта:
-- автотесты написаны на языке `Java`
-- для UI-тестов используется тестовый фреймворк `Selenide`
+Перечень технологий и инструментов, использованных при реализации этого проекта:
+- Автотесты написаны на языке `Java`
+- Для UI-тестов используется тестовый фреймворк `Selenide`
 - Для сборки проекта используется `Gradle`
 - Библиотека для модульного тестирования: `JUnit 5`
 - `Jenkins` выполняет удаленный запуск тестов в визуальном-онлайн интерфейсе. Установки дополнительных приложений на компьютер пользователя не требуется.
@@ -118,7 +116,7 @@ test
 
 ## :bellhop_bell: Отчет в Telegram
 После завершения сборки специальный Telegram-бот отправляет сообщение с отчетом о прогоне тестов.
-Чтобы видеть сообщения от бота, вступите (временно) в телеграм-группу `OlgaKos Bot_Group`
+Чтобы видеть сообщения от бота, вступите (временно) в телеграмм-группу `OlgaKos Bot_Group`
 
 <p align="center">
 <img title="Telegram Bot" src="images/screens/ScreenshotTelegram.jpg" alt="Telegram Bot">
@@ -126,3 +124,4 @@ test
 -------
 ver1 2022-03-29
 ver2 2022-05-19 (add PageObject)
+ver3 2022-05-22 (fix TestBase)

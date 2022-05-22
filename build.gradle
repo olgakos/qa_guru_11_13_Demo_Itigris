@@ -74,22 +74,4 @@ task site_tests(type: Test) {
     useJUnitPlatform {
         includeTags "siteTests"
     }
-
-
-    /*
-    //@Tag для пропуска тестов
-    //для запуска тестов придется использовать команду "gradle clean regress" ну или другое название таски
-    task regress(type: Test) {
-        useJUnitPlatform {
-            includeTags "regress"
-            excludeTags "smoke"}
-    }
-
-
-    //@Tag для пропуска тестов (demo)
-    task notRun (type: Test) {
-        useJUnitPlatform {
-            excludeTags "notrun"}
-    }
-     */
 }
