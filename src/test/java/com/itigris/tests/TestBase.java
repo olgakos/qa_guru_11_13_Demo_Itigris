@@ -4,14 +4,11 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
@@ -24,7 +21,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = size;
         Configuration.browser = browser;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //NB удаленный запуск
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -47,12 +44,6 @@ public class TestBase {
         Attach.addVideo();
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        closeWebDriver(); // Закрыть браузер после записи видео
-    }
-
-    void alertWindowMethod() {
-        if ($x("//h3[contains(.,'ПОЛИТИКА БЕЗОПАСНОСТИ')]").is(exist)) {
-            $(".el-button--danger").shouldHave(text("Принять")).click();
-        }
+        closeWebDriver();
     }
 }

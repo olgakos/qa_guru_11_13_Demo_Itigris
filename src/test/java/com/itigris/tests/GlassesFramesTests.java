@@ -1,6 +1,5 @@
 package com.itigris.tests;
 
-import com.codeborne.selenide.Selenide;
 import com.itigris.pages.GlassesFramesPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -61,6 +60,12 @@ public class GlassesFramesTests extends TestBase {
     // На странице "Каталог оправ"
     // не работает поиск по брендам Enni Marco и Enni Marco Emilia
     // если наименование товара содержит > 1 слова
+
+    void alertWindowMethod() {
+        if ($x("//h3[contains(.,'ПОЛИТИКА БЕЗОПАСНОСТИ')]").is(exist)) {
+            $(".el-button--danger").shouldHave(text("Принять")).click();
+        }
+    }
 }
 
 

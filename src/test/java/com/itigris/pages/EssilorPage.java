@@ -17,6 +17,7 @@ public class EssilorPage {
 
     // actions
     public void checkTextOurSuccessStories() {
+
         textOurSuccessStories.isDisplayed();
     }
 

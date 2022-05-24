@@ -12,7 +12,6 @@ public class EssilorTests extends TestBase {
 
     String url = "/cases";
     String data = "Essilor";
-    //String data = "Alcon"; //negative test
 
     @Test
     @Tag("siteTests")

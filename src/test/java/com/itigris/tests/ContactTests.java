@@ -25,7 +25,7 @@ public class ContactTests extends TestBase {
         contactPage.setEmailInput(setEmail);
         contactPage.setTelInput(setTel);
         contactPage.setPositionInput(setPosition);
-        contactPage.CheckAcceptPrivacyPolicy();
+        contactPage.checkAcceptPrivacyPolicy();
         //$x("//span[text()='SEND MESSAGE']").click(); //намеренно пропускаю шаг "отправить"
     }
 }
