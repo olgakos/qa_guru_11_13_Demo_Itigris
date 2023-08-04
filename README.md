@@ -63,7 +63,7 @@ test
 
 ## :watermelon: Запуск тестов в Jenkins
 Шаги:
-1. <i>Зарегистрированным</i> пользователем перейти на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_11_13_Demo_Itigris/">Jenkins Itigris</a>
+1. <i>Зарегистрированным</i> пользователем перейти на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/Students/job/qa_guru_11_13_Demo_Itigris/">Jenkins Itigris</a>
 2. Перечисленные ниже параметры можно менять в графическом интерфейсе.
 3. Запустить выполнение тестов кнопкой "Собрать" (внизу страницы)
 
@@ -121,8 +121,10 @@ test
 <p align="center">
 <img title="Telegram Bot" src="images/screens/ScreenshotTelegram.jpg" alt="Telegram Bot">
 </p>
--------
-ver1 2022-03-29
-ver2 2022-05-19 (add PageObject)
-ver3 2022-05-22 (fix TestBase)
-ver4 2022-05-24 (some refactoring)
+
+-------------
+<br>Story:
+<br>2022-05-24 (some refactoring)
+<br>2023-08-04 upd Jenlins link
+##### todo
+<br>Обновить UI тесты 
