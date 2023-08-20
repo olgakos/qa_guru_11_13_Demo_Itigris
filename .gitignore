@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
 
-.docs
+/docs
 
 # Log file
 *.log
