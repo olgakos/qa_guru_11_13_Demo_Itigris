@@ -21,7 +21,7 @@ public class EssilorPage {
         textOurSuccessStories.isDisplayed();
     }
 
-    public void checkLinkEssilor() {
+    public void pressEssilorViewMore() {
         link.click();
     }
 

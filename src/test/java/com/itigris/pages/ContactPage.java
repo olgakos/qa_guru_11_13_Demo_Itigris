@@ -12,7 +12,9 @@ public class ContactPage {
     private SelenideElement emailInput = $("input[placeholder='Enter your email address']");
     private SelenideElement telInput = $("input[placeholder='Enter your phone number']");
     private SelenideElement positionInput = $("input[placeholder='Enter your industry']");
+    private SelenideElement aboutText = $("input[placeholder='Tell us about your Operations, Processes, etc.']");
     private SelenideElement buttonCheck = $$("span.el-checkbox__inner").last();
+    private SelenideElement buttonSend = $("span[text()='SEND MESSAGE']");
 
     // actions
     public void setNameInput(String username) {
@@ -35,7 +37,18 @@ public class ContactPage {
         positionInput.setValue(position1);
     }
 
+    public void setAboutText(String aboutText1) {
+
+        positionInput.setValue(aboutText1);
+    }
+
     public void checkAcceptPrivacyPolicy() {
+
         buttonCheck.click();
+    }
+
+    public void pressSendKey() {
+
+        buttonSend.click();
     }
 }

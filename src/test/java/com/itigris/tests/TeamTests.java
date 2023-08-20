@@ -22,9 +22,11 @@ public class TeamTests extends TestBase {
         teamPage.checkMeetOurTeamVisible();
         teamPage.checkMichaelKhurginVisible();
         teamPage.checkEmailVisible();
-        teamPage.checkTextFooter();
+        teamPage.checkTextFooter(); //bug
     }
-    //todo
-    // Фактический результат: В футере itigris.com стоит 2020 год.
-    // Ожидаемый результат: 2022
+    //TODO
+    /*
+    Фактический результат: В футере itigris.com стоит 2020 год.
+    Ожидаемый результат: 2023
+     */
 }

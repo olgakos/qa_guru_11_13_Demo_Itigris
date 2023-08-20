@@ -13,8 +13,9 @@ public class ContactTests extends TestBase {
     String url = "/contact-us";
     String setName = "Olga Kos";
     String setEmail = "test@test.test";
-    String setTel = "+7921781хххх";
+    String setPhone = "+7921781хххх";
     String setPosition = "QA engineer";
+    String setText = "Text text";
 
     @Test
     @Tag("siteTests")
@@ -23,9 +24,10 @@ public class ContactTests extends TestBase {
         open(url);
         contactPage.setNameInput(setName);
         contactPage.setEmailInput(setEmail);
-        contactPage.setTelInput(setTel);
+        contactPage.setTelInput(setPhone);
         contactPage.setPositionInput(setPosition);
+        contactPage.setAboutText(setText);
         contactPage.checkAcceptPrivacyPolicy();
-        //$x("//span[text()='SEND MESSAGE']").click(); //намеренно пропускаю шаг "отправить"
+//      contactPage.pressSendKey(); //пропускаю шаг "отправить"
     }
 }

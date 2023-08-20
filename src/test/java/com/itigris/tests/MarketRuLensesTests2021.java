@@ -11,14 +11,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LensesTests extends TestBase {
+public class MarketRuLensesTests2021 extends TestBase {
 
     LensesPage lensesPage = new LensesPage();
 
     String url = "https://market.itigris.ru/catalog/lenses";
 
     @Tag("marketTests")
-    @DisplayName("Поиск нескольких товаров.")
+    @DisplayName("Поиск нескольких товаров")
     @ParameterizedTest(name = "Проверка результатов для запроса: \"{0}\"")
     @CsvSource(value = {
             "EYNOA| Hoya Nulux EYNOA",

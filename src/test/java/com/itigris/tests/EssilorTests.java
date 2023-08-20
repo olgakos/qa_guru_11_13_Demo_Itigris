@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 
 public class EssilorTests extends TestBase {
+
     EssilorPage essilorPage = new EssilorPage();
 
     String url = "/cases";
@@ -15,11 +16,11 @@ public class EssilorTests extends TestBase {
 
     @Test
     @Tag("siteTests")
-    @DisplayName("Проверка названия в карточке кейса Essilor")
+    @DisplayName("Проверка названия в карточке кейса: Essilor")
     void searchCasesTest() {
         open(url);
         essilorPage.checkTextOurSuccessStories();
-        essilorPage.checkLinkEssilor();
+        essilorPage.pressEssilorViewMore();
         essilorPage.checkEssilorIsTrue(data);
     }
 }

@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class GlassesFramesTests extends TestBase {
+public class MarketRuGlassesFramesTests2021 extends TestBase {
 
     GlassesFramesPage framesPage = new GlassesFramesPage();
 
